@@ -1,15 +1,19 @@
 import { useState } from 'react'
 
-
-import './App.css'
-
+import Home from './Components/Home'
+import DicePage from './Components/DicePage'
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [ShowHome,SetShowHome]=useState(true)
+const  Toggling=()=>{
+SetShowHome((pre)=>!pre)
+}
 
   return (
-    <>
-      hellotaurn 
-    </>
+<>
+   {ShowHome==true?<Home checkhome={Toggling}/>:<DicePage checkhome={Toggling} />}
+
+</>
   )
 }
 
